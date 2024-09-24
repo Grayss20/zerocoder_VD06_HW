@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета пользователя</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Анкета пользователя</h1>
+    <form method="POST" action="/">
+        <div class="mb-3">
+            <label for="name" class="form-label">Имя</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Введите ваше имя" required>
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">Город</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="Введите ваш город" required>
+        </div>
+        <div class="mb-3">
+            <label for="hobby" class="form-label">Хобби</label>
+            <input type="text" class="form-control" id="hobby" name="hobby" placeholder="Введите ваши хобби" required>
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Возраст</label>
+            <input type="number" class="form-control" id="age" name="age" placeholder="Введите ваш возраст" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Отправить</button>
+    </form>
+    {% if questi %}
+    <hr>
+    <h2 class="mb-4">Вы предоставили следующие данные:</h2>
+    <div class="row">
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Имя: {{ questi['name'] }}</h3>
+                    <p class="card-text">Город: {{ questi['city'] }}</p>
+                    <p class="card-text">Хобби: {{ questi['hobby'] }}</p>
+                    <p class="card-text">Возраст: {{ questi['age'] }}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {% endif %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
